@@ -20,6 +20,9 @@ class Medico(Funcionario):
     def _verificar_telefone(self, telefone: str) -> str:
         return super()._verificar_telefone(telefone)
     
+    #def salario_final(float, salario):
+        #return super().salario_final(salario)
+    
 #Tostring()
     def __str__(self) -> str:
         return (super().__str__() +

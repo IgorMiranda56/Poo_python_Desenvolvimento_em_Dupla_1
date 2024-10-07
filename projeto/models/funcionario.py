@@ -12,9 +12,9 @@ class Funcionario(ABC):
         self.endereco = endereco
 
 #criando metodo salario
-    @abstractmethod
-    def salario_final(float, salario):
-        return salario
+    #@abstractmethod
+    #def salario_final(float, salario):
+        #return salario
 
 #criando metodo de exceção
     def _verificar_nome(self, nome:str) -> str:
