@@ -1,17 +1,21 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 from projeto.models.endereco import Endereco
 
 #criando classe abstrata
-class Funcionareio(ABC):
-    def __init__(self, nome: str, telefone: str, email: str, endereco: Endereco) -> None:
+class Funcionario(ABC):
+    def __init__(self, nome: str, telefone: str, email: str, salario: float, endereco: Endereco) -> None:
         super().__init__()
         self.nome = self._verificar_nome(nome)
         self.telefone = telefone
         self.email = email
+        self.salario = self._verificar_salario(salario)
         self.endereco = endereco
 
 #criando metodo salario
-    
+    @abstractmethod
+    def salario_final(float, salario):
+        return salario
+
 #criando metodo de exceção
     def _verificar_nome(self, nome:str) -> str:
         if not isinstance(nome, str):
@@ -19,6 +23,13 @@ class Funcionareio(ABC):
         if not nome.strip():
             raise ValueError("Nome precisa conter informação.")
         return nome
+    
+    def _verificar_salario(self, salario:float) -> float:
+        if not isinstance(salario, float):
+            raise TypeError("Digite apenas numeros para salario.")
+        if salario < 0:
+            raise ValueError("Digite apenas numeros positivos para salario.")
+        return salario 
 
 
 
