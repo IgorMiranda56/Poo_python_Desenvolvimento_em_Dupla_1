@@ -1,5 +1,6 @@
 from enum import Enum
 
+#Determinando atributos
 class UnidadeFederativa(Enum):
     BAHIA = ("Bahia", "BA")
     SAO_PAULO = ("São Paulo","SP")
