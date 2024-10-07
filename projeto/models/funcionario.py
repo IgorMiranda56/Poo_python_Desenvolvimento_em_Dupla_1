@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 from projeto.models.endereco import Endereco
 
 #criando classe abstrata
@@ -10,11 +10,6 @@ class Funcionario(ABC):
         self.email = self._verificar_email(email)
         self.salario = self._verificar_salario(salario)
         self.endereco = endereco
-
-#criando metodo salario
-    #@abstractmethod
-    #def salario_final(float, salario):
-        #return salario
 
 #criando metodo de exceção
     def _verificar_nome(self, nome:str) -> str:
